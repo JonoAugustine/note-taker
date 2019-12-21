@@ -9,7 +9,6 @@ const readFile = async file => rf(file, "UTF-8");
 
 const nadb = "./db.json";
 let db = {};
-load();
 
 /**
  * Saves top-level db instance to file.
@@ -65,6 +64,8 @@ const deleteNote = async id => {
   }
 };
 
-const getNotes = () => db;
+const getNotes = () => Object.values(db);
+
+load();
 
 module.exports = { getNotes, addNote, deleteNote };

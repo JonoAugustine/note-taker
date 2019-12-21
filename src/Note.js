@@ -29,7 +29,11 @@ class Note {
     ) {
       return new Note(obj.title, obj.text);
     }
-    throw new Error("Invalid note source");
+    throw new Error(
+      `Invalid note source "${
+        typeof obj === "object" ? JSON.stringify(obj) : obj
+      }"`
+    );
   }
 }
 
