@@ -9,6 +9,7 @@ const readFile = async file => rf(file, "UTF-8");
 
 const nadb = "./db.json";
 let db = {};
+load();
 
 /**
  * Saves top-level db instance to file.
