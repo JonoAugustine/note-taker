@@ -65,4 +65,6 @@ const deleteNote = async id => {
   }
 };
 
-module.exports = { addNote, deleteNote };
+const getNotes = async () => db;
+
+module.exports = { getNotes, addNote, deleteNote };
