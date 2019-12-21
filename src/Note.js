@@ -15,6 +15,22 @@ class Note {
     this.text = text;
     this.id = ID();
   }
+
+  /**
+   *
+   * @param {object} obj
+   * @returns {Note} Returns note created from given object or err if invalid.
+   */
+  static from(obj) {
+    if (
+      obj &&
+      typeof obj["text"] === "string" &&
+      typeof obj["title"] === "string"
+    ) {
+      return new Note(obj.title, obj.text);
+    }
+    throw new Error("Invalid note source");
+  }
 }
 
 module.exports = { Note };

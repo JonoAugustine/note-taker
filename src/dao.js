@@ -37,7 +37,7 @@ const load = async () => {
 /**
  * Adds a note to the 'db' and saves to file.
  * @param {Note} note
- * @returns {boolean}
+ * @returns {Promise<boolean>}
  */
 const addNote = async note => {
   try {
@@ -52,7 +52,7 @@ const addNote = async note => {
 /**
  *
  * @param {string} id Note ID
- * @returns {Note} deleted Note or null if not found or an err occurrs.
+ * @returns {Promise<Note>} deleted Note or null if not found or an err occurrs.
  */
 const deleteNote = async id => {
   try {
@@ -65,6 +65,6 @@ const deleteNote = async id => {
   }
 };
 
-const getNotes = async () => db;
+const getNotes = () => db;
 
 module.exports = { getNotes, addNote, deleteNote };
